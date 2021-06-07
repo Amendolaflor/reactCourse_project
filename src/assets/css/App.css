@@ -1,6 +1,25 @@
 .bg-blueNav {
-  background-color:darkblue;
+  background-color:rgb(41, 41, 58);
 }
 .navbar-nav {
   padding-left: 100px;
+}
+
+.logo {
+  width: 70px;
+}
+
+.product-list {
+  height: 200px;
+  padding: 50px;
+    
+}
+.cart-cont {  
+  padding-left: 50%;
+  
+}
+.cart {
+  width: 60px;
+  color: white;
+  padding-left: 10%;
 }
