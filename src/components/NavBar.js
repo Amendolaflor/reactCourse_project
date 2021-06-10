@@ -13,7 +13,7 @@ function NavBar() {
         </Navbar.Brand>
         <Nav>
             <Nav.Link href="products">Products</Nav.Link>
-            <Nav.Link href="about">About us</Nav.Link>
+             <Nav.Link href="about">About us</Nav.Link>
             <Nav.Link href="contact">Contact us</Nav.Link>
         </Nav>
         <CartWidget/>
