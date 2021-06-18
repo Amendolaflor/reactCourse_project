@@ -1,10 +1,10 @@
 import React from "react";
 import ItemList from "../itemlist/ItemList";
+//import FetchProductsApi from "../fetchproductsapi/FetchProductsApi";
 
 function ItemListContainer(props) {
   return (
     <div className="product-list">
-      <h1> {props.greeting} </h1>
       <ItemList />
     </div>
   );

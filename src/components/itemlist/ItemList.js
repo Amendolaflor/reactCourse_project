@@ -1,11 +1,12 @@
 import React from "react";
-import Item from "../item/Item";
+import FetchProductsApi from "../fetchproductsapi/FetchProductsApi";
+//import Item from "../item/Item";
 import "../item/Item.css";
 
 function ItemList() {
   return (
     <div>
-      <Item />
+      <FetchProductsApi />
     </div>
   );
 }

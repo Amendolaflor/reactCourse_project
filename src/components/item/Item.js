@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import CardDeck from "react-bootstrap/CardDeck";
-import ItemCount from "../itemcount/ItemCount";
+//import ItemCount from "../itemcount/ItemCount";
 
 function Item() {
   const data = [
@@ -61,7 +61,6 @@ function Item() {
             <h3>{dato.name}</h3>
             <p>{dato.description}</p>
             <hr />
-            <ItemCount />
           </Card>
         );
       })}
