@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { CardDeck, Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-//import CardDeck from "react-bootstrap/CardDeck";
+import "./FetchProductsApi.css";
 //import ItemCount from "../itemcount/ItemCount";
 
 function FetchProductsApi() {
@@ -8,29 +9,32 @@ function FetchProductsApi() {
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
-
       .then((res) => {
         setData(res);
       });
   }, []);
   console.log(data);
   return (
-    <div>
+    <Container>
+    <CardDeck>
       {data !== null ? (
         data.map((dato, index) => {
           return (
-            <Card border="light" style={{ width: "18rem" }} key={index}>
+            <CardDeck>
+            <Card ClassName = "ficha-producto" border="light" style={{ width: "18rem" }} key={index}>
               <Card.Img variant="top" src={dato.image} />
               <h3>{dato.title}</h3>
               <p>{dato.description}</p>
               <hr />
             </Card>
+            </CardDeck>
           );
         })
       ) : (
         <h3>Cargando Productos :)</h3>
       )}
-    </div>
+    </CardDeck>
+    </Container>
   );
 }
 
