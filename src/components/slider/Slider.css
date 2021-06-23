@@ -1,0 +1,24 @@
+@media (max-width: 1000px) {
+  .slider {
+    padding: 0% !important;
+  }  
+}
+
+.slider {
+	height: 300px;
+	padding: 0 100px;
+	
+}
+
+.awssld__timer {
+    opacity: 0;
+   
+}
+ .awssld__bar {
+     opacity: 0;
+
+ }
+
+
+
+

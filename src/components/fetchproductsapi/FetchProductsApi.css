@@ -1,8 +1,8 @@
 .card {
-	background-color: rgb(253, 242, 242);
+	background-color:white;
 }
 
 div.card-deck {
-	margin: 0 10px 0 10px;
+	margin: 0 10px 20px 10px;
 }
 

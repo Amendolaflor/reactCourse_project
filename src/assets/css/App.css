@@ -1,12 +1,6 @@
-.bg-blueNav {
-  background-color:rgb(41, 41, 58);
-}
-.navbar-nav {
-  padding-left: 100px;
-}
-
-.logo {
-  width: 70px;
+body {
+  margin: 0;
+  font-family: 'Dosis', sans-serif;
 }
 
 .product-list {
@@ -19,7 +13,7 @@
   
 }
 .cart {
-  width: 60px;
+  width: 30px;
   color: white;
-  padding-left: 10%;
+  
 }
