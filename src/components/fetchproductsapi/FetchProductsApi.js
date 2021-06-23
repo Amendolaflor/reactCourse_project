@@ -22,6 +22,7 @@ function FetchProductsApi() {
               image={dato.image}
               name={dato.description}
               title={dato.title}
+             price={dato.price}
               stock="9"
             />
           );

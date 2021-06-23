@@ -4,7 +4,7 @@ import "../fetchproductsapi/FetchProductsApi.css";
 import ItemCount from "../itemcount/ItemCount";
 import "./Item.css";
 
-function Item({ image, title, description, index, stock }) {
+function Item({ image, title, price, index, stock }) {
   const onAdd = () => {
     console.log("Articulo en tu carrito");
   };
@@ -19,7 +19,7 @@ function Item({ image, title, description, index, stock }) {
       >
         <Card.Img variant="top" src={image} />
         <h3>{title}</h3>
-        <p>{description}</p>
+        <p>precio: USD {price}</p>
         <p stock="9"> </p>
         <hr />
         <ItemCount stock={stock} onAdd={onAdd} />
