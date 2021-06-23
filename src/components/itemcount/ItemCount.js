@@ -1,32 +1,47 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
+import { Button } from "react-bootstrap";
+import "./ItemCount.css";
 
-function ItemCount() {
-  const [count, setCount] = useState(1);
-
-  function increaseCount() {
-    if (count < 7) {
-      setCount(count + 1);
+function ItemCount({ stock, onAdd }) {
+  const [counter, setCounter] = useState(1);
+  const sumar = () => {
+    if (counter < stock) {
+      setCounter(counter + 1);
     }
-  }
-
-  function decreaseCount() {
-    if (count > 0) {
-      setCount(count - 1);
+  };
+  const restar = () => {
+    if (counter > 1) {
+      setCounter(counter - 1);
     }
-  }
-
+  };
+  const manualChange = (e) => {
+    let value = e.target.value;
+    if (value > stock) {
+      setCounter(stock);
+    } else {
+      setCounter(value);
+    }
+  };
   return (
     <div>
-      <Button
-        variant="outline-dark"
-        onClick={increaseCount}
-      >{` Agregar `}</Button>
-      <Button
-        variant="outline-dark"
-        onClick={decreaseCount}
-      >{` Quitar `}</Button>
-      <p>{`Cantidad: ${count}`}</p>
+      {stock > 0 ? (
+        <>
+          <button onClick={restar}>-</button>
+          <input type="number" value={counter} onChange={manualChange} />
+          <button onClick={sumar}>+</button>
+          <div>
+            <Button
+              className="btn-comprar"
+              onClick={onAdd}
+              variant="outline-info"
+            >
+              Comprar
+            </Button>{" "}
+          </div>
+        </>
+      ) : (
+        <p>Sin stock</p>
+      )}
     </div>
   );
 }

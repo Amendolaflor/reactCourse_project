@@ -1,6 +1,15 @@
 .card {
-	background-color: rgb(223, 203, 203);
+	background-color: white;
 	text-align: center;
 	padding-top: 50px;
 	margin-top: 80px;
+
+}	
+.ficha-producto {
+	background-color:white;
 }
+
+div.card-deck {
+	margin: 0 10px 0px 10px;
+}
+

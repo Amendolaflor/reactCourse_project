@@ -1,68 +1,29 @@
-import React from "react";
+import { CardDeck } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import CardDeck from "react-bootstrap/CardDeck";
+import "../fetchproductsapi/FetchProductsApi.css";
+import ItemCount from "../itemcount/ItemCount";
+import "./Item.css";
 
-function Item() {
-  const data = [
-    {
-      id: "1",
-      name: "Anteojos Chloe",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipiscing, elit id.",
-      stock: 5,
-    },
-    {
-      id: "2",
-      name: "Reloj Heroine",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipiscing, elit id.",
-      stock: 16,
-    },
-    {
-      id: "3",
-      name: "Cartera Lady",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipiscing, elit id.",
-      stock: 13,
-    },
-  ];
-
-  function getItems() {
-    let myFirstPromise = new Promise((resolve, reject) => {
-      setTimeout(function () {
-        const error = false;
-        if (!error) {
-          resolve(data);
-        }
-        reject("Error obteniendo los datos solicitados");
-      }, 2000);
-    });
-
-    myFirstPromise
-      .then(function (datos) {
-        console.log(datos);
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
-      .finally(function () {
-        console.log("Bravo, hiciste tu primera promesa <3!!");
-      });
-  }
-
-  getItems();
+function Item({ image, title, description, index, stock }) {
+  const onAdd = () => {
+    console.log("Articulo en tu carrito");
+  };
 
   return (
     <CardDeck>
-      {data.map((dato, index) => {
-        return (
-          <Card key={index}>
-            <h3>{dato.name}</h3>
-            <p>{dato.description}</p>
-            <hr />
-          </Card>
-        );
-      })}
+      <Card
+        ClassName="ficha-producto"
+        border="light"
+        style={{ width: "18rem" }}
+        key={index}
+      >
+        <Card.Img variant="top" src={image} />
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <p stock="9"> </p>
+        <hr />
+        <ItemCount stock={stock} onAdd={onAdd} />
+      </Card>
     </CardDeck>
   );
 }
