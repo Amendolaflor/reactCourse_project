@@ -1,14 +1,12 @@
-import React from 'react';
-import Slider from "../components/slider/Slider";
+import React from "react";
 import ItemListContainer from "../components/itemlistcontainer/ItemListContainer"
 
-function Home() {
+function Products() {
   return (
     <div>
-      <Slider />,
       <ItemListContainer />
     </div>
   );
 }
 
-export default Home;
+export default Products;

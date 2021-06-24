@@ -1,50 +1,57 @@
-import React from 'react';
-import logotipo from '../../assets/imgs/logotipo2.png';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-import './NavBar.css'; 
-import CartWidget from '../cartwidget/CartWidget'
-
+import React from "react";
+import logotipo from "../../assets/imgs/logotipo2.png";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import "./NavBar.css";
+import CartWidget from "../cartwidget/CartWidget";
+import { NavLink } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
 
 function NavBar() {
   return (
-    <Navbar className = "nav" collapseOnSelect expand="lg" variant="dark">
-  <Navbar.Brand href="#home"> <img className="logo" src={logotipo} alt="react logo" /></Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="mr-auto">
-      <Nav.Link href="/home">Home</Nav.Link>
-      <Nav.Link href="/about">About</Nav.Link>
-      <NavDropdown title="Productos" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="/products/3.1">Ropa Mujer</NavDropdown.Item>
-        <NavDropdown.Item href="/products/3.2">Ropa hombre</NavDropdown.Item>
-        <NavDropdown.Item href="/products/3.3">Bijouterie</NavDropdown.Item>
-        <NavDropdown.Item href="/products/3.4">Electronica</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="/checkout/3.5">Ir al pago</NavDropdown.Item>
-      </NavDropdown>
-    </Nav>
-    <Nav>
-      <Nav.Link href="#deets"><CartWidget /></Nav.Link>
-      <Nav.Link eventKey={2} href="#memes">
-      </Nav.Link>
-    </Nav>
-  </Navbar.Collapse>
-</Navbar>
-    
+    <Navbar className="nav" collapseOnSelect expand="lg" variant="dark">
+      <LinkContainer to="/">
+        <Nav.Link>
+          {" "}
+          <img className="logo" src={logotipo} alt="react logo" />
+        </Nav.Link>
+      </LinkContainer>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto">
+          <LinkContainer to="/">
+            <Nav.Link>Home</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/about">
+            <Nav.Link>About</Nav.Link>
+          </LinkContainer>
+          <NavDropdown title="Productos" id="collasible-nav-dropdown">
+            <LinkContainer to="/products/1">
+              <NavDropdown.Item>Ropa Mujer</NavDropdown.Item>
+            </LinkContainer>
+            <LinkContainer to="/products/2">
+              <NavDropdown.Item>Ropa hombre</NavDropdown.Item>
+            </LinkContainer>
+            <LinkContainer to="/products/3">
+              <NavDropdown.Item>Bijouterie</NavDropdown.Item>
+            </LinkContainer>
+            <LinkContainer to="/products/4">
+              <NavDropdown.Item>Electronica</NavDropdown.Item>
+            </LinkContainer>
+            <NavDropdown.Divider />
+            <LinkContainer to="/checkout">
+              <NavDropdown.Item to="/checkout">Ir al pago</NavDropdown.Item>
+            </LinkContainer>
+          </NavDropdown>
+        </Nav>
+        <Nav>
+          <NavLink exact to="/">
+            <CartWidget />
+          </NavLink>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 
 export default NavBar;
-/* <div className="App">
-      <Navbar bg="blueNav" variant="dark">
-        <Navbar.Brand>
-          <img className="logo" src={logo} alt="react logo" /> Easy Shopping
-        </Navbar.Brand>
-        <Nav>
-          <Nav.Link href="products">Products</Nav.Link>
-          <Nav.Link href="about">About us</Nav.Link>
-          <Nav.Link href="contact">Contact us</Nav.Link>
-        </Nav>
-        <CartWidget />
-      </Navbar>
-    </div> */
+

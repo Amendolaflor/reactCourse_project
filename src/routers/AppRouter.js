@@ -3,19 +3,23 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Products from "../pages/Products";
-//import NavBar from "../components/navbar/NavBar"
+import NavBar from "../components/navbar/NavBar";
+import Checkout from "../components/checkout/Checkout"
 
 function AppRouters() {
   return (
-    <BrowserRouter>
-      
+    <BrowserRouter>    
+      <NavBar/>
       <Switch>
-        <Route exact path="/">{Home} </Route>         
-        <Route path="/about">{About}</Route>
-        <Route path="/products">{Products}</Route>
-      </Switch>
+        <Route exact path="/"> <Home/></Route>                 
+        <Route path="/products"><Products/></Route>
+        <Route path="/about"><About/></Route>
+        <Route path="/checkout"><Checkout/></Route>
+      </Switch>     
     </BrowserRouter>
   );
 }
 
 export default AppRouters;
+
+

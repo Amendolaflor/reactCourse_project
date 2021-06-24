@@ -7,7 +7,7 @@ function ItemListContainer(props) {
   return (
     <div className="product-list">
       <div className = "greeting">
-        <h1> {props.greeting} </h1>
+        <h1> Welcome! Thanks for your visit! </h1>
       </div>
       <ItemList />
       <ItemDetailContainer/>
