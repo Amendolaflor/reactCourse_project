@@ -1,28 +1,25 @@
-import { CardDeck } from "react-bootstrap";
-import Card from "react-bootstrap/Card";
+import { Card, CardDeck, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../fetchproductsapi/FetchProductsApi.css";
-import ItemCount from "../itemcount/ItemCount";
 import "./Item.css";
 
-function Item({ image, title, price, index, stock }) {
-  const onAdd = () => {
-    console.log("Articulo en tu carrito");
-  };
-
+function Item({ image, title, price, index, id }) {
+ 
   return (
     <CardDeck>
       <Card
-        ClassName="ficha-producto"
+        className="ficha-producto"
         border="light"
         style={{ width: "18rem" }}
         key={index}
       >
-        <Card.Img variant="top" src={image} />
+        <Card.Img variant="top" className="prod-img" src={image} />
         <h3>{title}</h3>
-        <p>precio: USD {price}</p>
-        <p stock="9"> </p>
+        <p>{`Precio: $${price}`}</p>        
         <hr />
-        <ItemCount stock={stock} onAdd={onAdd} />
+        <div>
+          <Link to={`/${id}`}><Button variant="outline-info">Detalle</Button>{" "}</Link>
+        </div>
       </Card>
     </CardDeck>
   );

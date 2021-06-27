@@ -1,4 +1,4 @@
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
   .slider {
     padding: 0% !important;
   }  
@@ -21,6 +21,32 @@
  .awssld__bullets {
    margin: 0%;
  }
+
+ */
+
+
+
+.each-slide span {
+  padding: 20px;
+  font-size: 20px;
+  
+  text-align: center;
+}
+.slide-container {
+  width: 100%;
+  margin: auto; }
+
+h3 {
+  text-align: center; }
+
+.each-slide > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 300px;
+  
+}
 
 
 

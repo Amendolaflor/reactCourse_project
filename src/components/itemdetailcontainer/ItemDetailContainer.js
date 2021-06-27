@@ -1,36 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
 import ItemDetail from "../itemdetail/ItemDetail";
+import { useParams } from "react-router";
 
 function ItemDetailContainer() {
-  const [data, setData] = useState(null);
+  const [product, setProduct] = useState([]);
+  let { product_id } = useParams();
+
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products?limit=5")
+    fetch(
+      `https://api.mercadolibre.com/items/${product_id}?include_attributes=all`
+    )
       .then((res) => res.json())
       .then((res) => {
-        setData(res);
+        setProduct(res);
       });
-  }, []);
-  console.log(data);
+  });
+
   return (
-    <Container>
-      {data !== null ? (
-        data.map((dato, index) => {
-          return (
-            <ItemDetail
-              key={index}
-              image={dato.image}
-              description={dato.description}
-              title={dato.title}
-              price={dato.price}
-              stock="9"
-            />
-          );
-        })
-      ) : (
-        <p/>
-      )}
-    </Container>
+    <>
+      <ItemDetail item={product} />
+    </>
   );
 }
 

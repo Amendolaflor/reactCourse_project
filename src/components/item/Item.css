@@ -13,3 +13,9 @@ div.card-deck {
 	margin: 0 10px 0px 10px;
 }
 
+.prod-img {
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+	align-items: center;
+}

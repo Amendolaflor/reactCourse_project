@@ -5,12 +5,13 @@ import Item from "../item/Item";
 function FetchProductsApi() {
   const [data, setData] = useState(null);
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch("https://api.mercadolibre.com/sites/MLA/search?category=MLA1430")
       .then((res) => res.json())
       .then((res) => {
-        setData(res);
+        setData(res.results);
       });
   }, []);
+
   console.log(data);
   return (
     <CardDeck>
@@ -19,11 +20,11 @@ function FetchProductsApi() {
           return (
             <Item
               key={index}
-              image={dato.image}
-              name={dato.description}
+              id={dato.id}
+              image={dato.thumbnail}
               title={dato.title}
-             price={dato.price}
-              stock="9"
+              price={dato.price}
+              stock={dato.available_quantity}
             />
           );
         })

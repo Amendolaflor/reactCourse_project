@@ -1,16 +1,14 @@
 import React from "react";
-import ItemDetailContainer from "../itemdetailcontainer/ItemDetailContainer";
 import ItemList from "../itemlist/ItemList";
-import "./ItemListContainer.css"
+import "./ItemListContainer.css";
 
-function ItemListContainer(props) {
+function ItemListContainer() {
   return (
     <div className="product-list">
-      <div className = "greeting">
-        <h1> Welcome! Thanks for your visit! </h1>
+      <div className="greeting">
+        <h1> Bienvenidos! Gracias por su visita! </h1>
       </div>
       <ItemList />
-      <ItemDetailContainer/>
     </div>
   );
 }
