@@ -14,7 +14,7 @@ function ItemDetailContainer() {
       .then((res) => {
         setProduct(res);
       });
-  });
+  },[ product_id ]);
 
   return (
     <>
