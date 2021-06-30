@@ -12,7 +12,6 @@ function FetchProductsApi() {
       });
   }, []);
 
-  console.log(data);
   return (
     <CardDeck>
       {data !== null ? (

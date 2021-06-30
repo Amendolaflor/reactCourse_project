@@ -23,18 +23,24 @@ function ItemCount({ stock, onAdd }) {
     }
   };
   return (
-    <div>
+    <div className="btn-comprar">
       {stock > 0 ? (
         <>
-          <button onClick={restar}>-</button>
-          <input type="number" value={counter} onChange={manualChange} />
-          <button onClick={sumar}>+</button>
+          {" "}
+          <Button variant="info" onClick={restar}>
+            -
+          </Button>{" "}
+          <input
+            type="number"
+            value={counter}
+            placeholder="Escribe la cantidad"
+            onChange={manualChange}
+          />
+          <Button variant="info" onClick={sumar}>
+            +
+          </Button>
           <div>
-            <Button
-              className="btn-comprar"
-              onClick={onAdd}
-              variant="outline-info"
-            >
+            <Button onClick={onAdd} variant="outline-info">
               Comprar
             </Button>{" "}
           </div>
