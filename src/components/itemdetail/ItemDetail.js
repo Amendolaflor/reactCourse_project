@@ -2,11 +2,11 @@ import React from "react";
 import { Container, Row, Image, Col } from "react-bootstrap";
 import "./ItemDetail.css";
 import ItemCount from "../itemcount/ItemCount";
-import {UseCartContext} from "../../context/CartContext"
+//import {UseCartContext} from "../../context/CartContext"
 
 
 function ItemDetail({ item }) {
-  const {AddToCart} = UseCartContext();
+  //const {AddToCart} = UseCartContext();
 
 //fatla logica del carrito
 
@@ -26,12 +26,12 @@ function ItemDetail({ item }) {
               <p>{`Precio: $${item.price}`}</p>
               <p>{`Descripcion: ${item.title}`} </p>
               <hr />
-              <ItemCount stock={item.available_quantity} onAdd={AddToCart}/>
+              <ItemCount stock={item.available_quantity} /*>onAdd={AddToCart}*//>
             </Col>
           </Row>
         </Container>
       ) : (
-        <p>No hay nada para mostrar</p>
+        <p></p>
       )}
     </>
   );

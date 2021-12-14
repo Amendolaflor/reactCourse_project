@@ -8,8 +8,8 @@ export function UseCartContext() {
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  function AddToCart({ obj }) {
-    setCart([...cart, obj])
+  function AddToCart( {item} ) {
+    setCart([...cart, item])
   }
   return (
     <CartContext.Provider value={{ cart, AddToCart }}>

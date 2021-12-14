@@ -17,7 +17,6 @@ function AppRouters() {
         <Route path="/about"><About/></Route>
         <Route path="/checkout"><Checkout/></Route>
         <Route path="/:product_id"><ItemDetailContainer/></Route>
-
       </Switch>     
     </BrowserRouter>
   );

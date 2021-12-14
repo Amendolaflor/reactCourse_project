@@ -1,6 +1,6 @@
 import { Card, CardDeck, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "../fetchproductsapi/FetchProductsApi.css";
+//import "../fetchproductsapi/FetchProductsApi.css";
 import "./Item.css";
 
 function Item({ image, title, price, index, id }) {

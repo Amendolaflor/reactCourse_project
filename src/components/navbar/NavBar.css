@@ -3,11 +3,20 @@ body {
   margin: 0
 }
 .nav {
-  background-color:#222831;
+  background: #2d0444de;
+
+  
   margin-bottom: 0%;
   padding: 0 180px;
- height:200%
+ 
+ 
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  line-height: 60px;
 }
+
+
 .navbar-nav {
   padding-left: 100px; 
   

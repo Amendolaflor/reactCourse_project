@@ -24,7 +24,7 @@
 
  */
 
-
+/* 
 
 .each-slide span {
   padding: 20px;
@@ -46,8 +46,12 @@ h3 {
   background-size: cover;
   height: 300px;
   
+} */
+
+.welcome {
+  background-image: url(../../assets/imgs/fondo-estrellas.jpg);
+  background-position: center;
+  padding-top: 80px ;
 }
-
-
 
 

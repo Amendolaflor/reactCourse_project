@@ -1,5 +1,5 @@
 import React from "react";
-import logotipo from "../../assets/imgs/logotipo2.png";
+import logotipo from "../../assets/imgs/logo3.png";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import "./NavBar.css";
 import CartWidget from "../cartwidget/CartWidget";
@@ -12,9 +12,10 @@ function NavBar() {
       <LinkContainer to="/">
         <Nav.Link>
           {" "}
-          <img className="logo" src={logotipo} alt="react logo" />
+          <img className="logo" src={logotipo} alt="react logo" />      
         </Nav.Link>
       </LinkContainer>
+        <Navbar.Brand>NUTRISHOP</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
@@ -26,16 +27,16 @@ function NavBar() {
           </LinkContainer>
           <NavDropdown title="Productos" id="collasible-nav-dropdown">
             <LinkContainer to="/products/1">
-              <NavDropdown.Item>Ropa Mujer</NavDropdown.Item>
+              <NavDropdown.Item>Viandas</NavDropdown.Item>
             </LinkContainer>
             <LinkContainer to="/products/2">
-              <NavDropdown.Item>Ropa hombre</NavDropdown.Item>
+              <NavDropdown.Item>Dulces</NavDropdown.Item>
             </LinkContainer>
             <LinkContainer to="/products/3">
-              <NavDropdown.Item>Bijouterie</NavDropdown.Item>
+              <NavDropdown.Item>Nutri</NavDropdown.Item>
             </LinkContainer>
             <LinkContainer to="/products/4">
-              <NavDropdown.Item>Electronica</NavDropdown.Item>
+              <NavDropdown.Item>Celiacos</NavDropdown.Item>
             </LinkContainer>
             <NavDropdown.Divider />
             <LinkContainer to="/checkout">

@@ -1,12 +1,14 @@
 import React from 'react';
 import Slider from "../components/slider/Slider";
-import ItemListContainer from "../components/itemlistcontainer/ItemListContainer"
+import ItemListContainer from "../components/itemlistcontainer/ItemListContainer";
+
 
 function Home() {
   return (
     <div>
-      <Slider />,
+      <Slider />
       <ItemListContainer />
+     
     </div>
   );
 }
